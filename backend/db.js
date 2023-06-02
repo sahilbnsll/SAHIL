@@ -1,10 +1,10 @@
 // backend/db.js
 
-const mongoose = require('mongoose');
+import { connect } from 'mongoose';
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb+srv://sahil12:<password>@gym.qdsqojr.mongodb.net/', {
+    await connect('mongodb+srv://sahil12:<Sahil@2571>@gym.qdsqojr.mongodb.net/?retryWrites=true&w=majority', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
@@ -16,4 +16,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export default connectDB;
