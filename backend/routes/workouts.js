@@ -35,6 +35,7 @@ router.get('/', protect, async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+module.exports = router;
 /*
 router.get('/', (req, res) => {
   Workout.find()

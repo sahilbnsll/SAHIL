@@ -1,6 +1,27 @@
 // backend/db.js
+const mongoose = require('mongoose');
 
-import { connect } from 'mongoose';
+const connectDB = async () => {
+  try {
+    await mongoose.connect('mongodb://localhost:27017/gym-workout', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('MongoDB connected');
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
+
+
+
+
+/*
+import mongoose from 'mongoose';
+;
 
 const connectDB = async () => {
   try {
@@ -17,3 +38,4 @@ const connectDB = async () => {
 };
 
 export default connectDB;
+*/
